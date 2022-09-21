@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ship:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2022-09-21T21:38:50.419835255Z"
+    description: A Helm chart for Kubernetes
+    digest: 159a30efad4f7d0f7047492697a4de6dd228c42e6c3159da4b4eea9f83e2573e
+    name: ship
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/ship-0.0.1/ship-0.0.1.tgz
+    version: 0.0.1
+generated: "2022-09-21T21:38:50.419840855Z"
