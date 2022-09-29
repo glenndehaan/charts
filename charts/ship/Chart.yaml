@@ -2,7 +2,7 @@ apiVersion: v2
 name: ship
 description: A kubernetes/docker swarm service manager/updater
 home: https://github.com/glenndehaan/ship
-icon: https://raw.githubusercontent.com/glenndehaan/ship/master/src/public/images/favicon.svg
+icon: https://raw.githubusercontent.com/glenndehaan/ship/master/src/public/images/favicon.png
 keywords:
   - kubernetes
   - docker

@@ -35,6 +35,70 @@ spec:
           env:
             - name: KUBERNETES
               value: "true"
+            {{- if .Values.ship.maxScale }}
+            - name: MAX_SCALE
+              value: {{ .Values.ship.maxScale }}
+            {{- end }}
+            {{- if .Values.ship.authHeader }}
+            - name: AUTH_HEADER
+              value: {{ .Values.ship.authHeader }}
+            {{- end }}
+            {{- if .Values.ship.webhook.custom }}
+            - name: CUSTOM_WEBHOOK
+              value: {{ .Values.ship.webhook.custom }}
+            {{- end }}
+            {{- if .Values.ship.webhook.slack }}
+            - name: SLACK_WEBHOOK
+              value: {{ .Values.ship.webhook.slack }}
+            {{- end }}
+            {{- if .Values.ship.email.smtp.host }}
+            - name: EMAIL_SMTP_HOST
+              value: {{ .Values.ship.email.smtp.host }}
+            {{- end }}
+            {{- if .Values.ship.email.smtp.port }}
+            - name: EMAIL_SMTP_PORT
+              value: {{ .Values.ship.email.smtp.port }}
+            {{- end }}
+            {{- if .Values.ship.email.smtp.secure }}
+            - name: EMAIL_SMTP_SECURE
+              value: {{ .Values.ship.email.smtp.secure }}
+            {{- end }}
+            {{- if .Values.ship.email.from }}
+            - name: EMAIL_FROM
+              value: {{ .Values.ship.email.from }}
+            {{- end }}
+            {{- if .Values.ship.email.to }}
+            - name: EMAIL_TO
+              value: {{ .Values.ship.email.to }}
+            {{- end }}
+            {{- if .Values.ship.hidden.deployments }}
+            - name: HIDDEN_DEPLOYMENTS
+              value: {{ .Values.ship.hidden.deployments }}
+            {{- end }}
+            {{- if .Values.ship.hidden.namespaces }}
+            - name: HIDDEN_NAMESPACES
+              value: {{ .Values.ship.hidden.namespaces }}
+            {{- end }}
+            {{- if .Values.ship.lockout.exceptions }}
+            - name: LOCKOUT_EXCEPTIONS
+              value: {{ .Values.ship.lockout.exceptions }}
+            {{- end }}
+            {{- if .Values.ship.lockout.deploymentRegex }}
+            - name: LOCKOUT_SERVICE_REGEX
+              value: {{ .Values.ship.lockout.deploymentRegex }}
+            {{- end }}
+            {{- if .Values.ship.lockout.days }}
+            - name: LOCKOUT_DAYS
+              value: {{ .Values.ship.lockout.days }}
+            {{- end }}
+            {{- if .Values.ship.lockout.afterHour }}
+            - name: LOCKOUT_AFTER_HOUR
+              value: {{ .Values.ship.lockout.afterHour }}
+            {{- end }}
+            {{- if .Values.ship.debugKubernetes }}
+            - name: DEBUG_KUBERNETES
+              value: {{ .Values.ship.debugKubernetes }}
+            {{- end }}
           ports:
             - name: http
               containerPort: 3000

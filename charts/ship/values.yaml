@@ -5,6 +5,48 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 
+# Ship specific configuration
+ship:
+  # Defines the maximum allowed scale. This means you can't scale a deployment with more replicas than this amount
+  maxScale: 20
+  # Can be used to instruct Ship to use an SSO providers username header
+  authHeader: ""
+  webhook:
+    # Can be used to enable custom webhooks to forward Ship events to other services, Example: https://webhook1.example.com/hook,https://webhook2.example.com/hook
+    custom: ""
+    # Can be used to enable slack notifications whenever an action on ship is performed
+    slack: ""
+  # Can be used to enable email notifications whenever an action on ship is performed
+  email:
+    smtp:
+      # Example: smtp.example.com
+      host: ""
+      # Example: 25
+      port: ""
+      # Example: false
+      secure: ""
+    # Example: noreply@example.com
+    from: ""
+    # Example: user1@example.com,user2@example.com
+    to: ""
+  # Can be used to hide specific deployments or namespaces from the ship overview page
+  hidden:
+    # Format: namespace/deployment, Example: ship/ship
+    deployments: ""
+    namespaces: ""
+  # Can be used to disable deployment modifications during specific days/times
+  lockout:
+    # Specifies usernames who can bypass the lockout rules, Example: user@example.com
+    exceptions: ""
+    # Specifies which deployments are affected by the lockout rules, Example: .*-live
+    deploymentRegex: ""
+    # Disallow specific days: 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday, Example: 0,5,6
+    days: ""
+    # Disallow modifications after a specified hour
+    afterHour: ""
+  # Can be enabled to include debug data as JS window parameters
+  debugKubernetes: false
+
 image:
   repository: glenndehaan/ship
   pullPolicy: Always
