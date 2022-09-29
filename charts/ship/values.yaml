@@ -8,7 +8,7 @@ revisionHistoryLimit: 1
 # Ship specific configuration
 ship:
   # Defines the maximum allowed scale. This means you can't scale a deployment with more replicas than this amount
-  maxScale: 20
+  maxScale: "20"
   # Can be used to instruct Ship to use an SSO providers username header
   authHeader: ""
   webhook:
