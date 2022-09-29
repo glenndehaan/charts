@@ -51,7 +51,7 @@ image:
   repository: glenndehaan/ship
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "kubernetes"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
