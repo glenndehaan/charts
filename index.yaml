@@ -3,6 +3,30 @@ entries:
   ship:
   - apiVersion: v2
     appVersion: latest
+    created: "2022-11-01T18:05:36.626908941Z"
+    description: A kubernetes/docker swarm service manager/updater
+    digest: 0f4b08afff274875fc28f801f7db82365c7fe767655604963c0642ad132eee3e
+    home: https://github.com/glenndehaan/ship
+    icon: https://raw.githubusercontent.com/glenndehaan/ship/master/src/public/images/favicon.png
+    keywords:
+    - kubernetes
+    - docker
+    - docker-image
+    - docker-swarm
+    - web-ui
+    - admin-panel
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+    name: ship
+    sources:
+    - https://github.com/glenndehaan/ship
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/ship-1.0.1/ship-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2022-09-29T19:45:09.098365491Z"
     description: A kubernetes/docker swarm service manager/updater
     digest: db31203600fb90cef5b3ed8adafaf4f261f12f558120c1d65b792809720b1d25
@@ -176,4 +200,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/ship-0.0.1/ship-0.0.1.tgz
     version: 0.0.1
-generated: "2022-09-29T19:45:09.098394293Z"
+generated: "2022-11-01T18:05:36.627078141Z"
