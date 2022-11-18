@@ -1,0 +1,23 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "traefik-redirect.fullname" . }}
+  labels:
+    {{- include "traefik-redirect.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- with .Values.ingress.entryPoints }}
+  entryPoints:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  routes:
+    - match: 'Host(`{{ .Values.ingress.host }}`) && PathPrefix(`/`)'
+      kind: Rule
+      middlewares:
+        - name: {{ include "traefik-redirect.fullname" . }}
+      services:
+        - name: noop@internal
+          kind: TraefikService

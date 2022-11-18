@@ -1,0 +1,11 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ include "traefik-redirect.fullname" . }}
+  labels:
+    {{- include "traefik-redirect.labels" . | nindent 4 }}
+spec:
+  redirectRegex:
+    regex: ^https?://{{ .Values.ingress.host }}/(.*)
+    replacement: https://{{ .Values.ingress.redirect }}/${1}
+    permanent: true
