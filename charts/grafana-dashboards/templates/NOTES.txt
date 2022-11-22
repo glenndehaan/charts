@@ -1,0 +1,2 @@
+Please wait a few seconds until the {{ .Chart.Name }} chart is fully installed.
+After installation is complete, open your Grafana instance to see your newly deployed dashboards.
