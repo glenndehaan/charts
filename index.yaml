@@ -1,5 +1,29 @@
 apiVersion: v1
 entries:
+  github-runner:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-11-22T18:22:43.030103256Z"
+    description: A Helm chart to setup GitHub runners for repositories
+    digest: 19b864e3649687f69a07794dc834f45c3a6616cb3651908318b648ba5f3fd372
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - github
+    - github-runners
+    - self-hosted-runners
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: github-runner
+    sources:
+    - https://github.com/glenndehaan/charts
+    - https://github.com/actions-runner-controller/actions-runner-controller
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/github-runner-1.0.0/github-runner-1.0.0.tgz
+    version: 1.0.0
   ship:
   - apiVersion: v2
     appVersion: latest
@@ -203,6 +227,27 @@ entries:
   traefik-redirect:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-11-22T18:22:43.155208639Z"
+    description: A Helm chart to create a simple http(s) redirect within Traefik
+    digest: abbf0f2cc975ef0b1ead938511e93c60d346fa6dcf33484a3fe4693f394ff620
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - traefik
+    - redirect
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: traefik-redirect
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.1/traefik-redirect-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-11-18T10:15:35.570605847Z"
     description: A Helm chart to create a simple http(s) redirect within Traefik
     digest: 5928ad0cee975b503a29445d6640e891066d4ede993b4da3cf4eeadf822d22bd
@@ -221,4 +266,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-18T10:15:35.570671447Z"
+generated: "2022-11-22T18:22:43.155260339Z"
