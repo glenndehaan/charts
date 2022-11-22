@@ -1,17 +1,19 @@
 apiVersion: v2
-name: traefik-redirect
-description: A Helm chart to create a simple http(s) redirect within Traefik
+name: github-runner
+description: A Helm chart to setup GitHub runners for repositories
 home: https://github.com/glenndehaan/charts
 keywords:
   - kubernetes
-  - traefik
-  - redirect
+  - github
+  - github-runners
+  - self-hosted-runners
 maintainers:
   - email: glenn@dehaan.cloud
     name: glenndehaan
     url: https://glenndehaan.com
 sources:
   - https://github.com/glenndehaan/charts
+  - https://github.com/actions-runner-controller/actions-runner-controller
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -26,7 +28,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.0.1
+version: 1.0.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to

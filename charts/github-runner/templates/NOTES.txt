@@ -1,0 +1,4 @@
+Please wait a few seconds until the {{ .Chart.Name }} chart is fully installed.
+After installation is complete, you can check your new runner here:
+
+https://github.com/{{ .Values.github.repository }}/settings/actions/runners

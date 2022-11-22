@@ -1,0 +1,8 @@
+Please wait a few seconds until the {{ .Chart.Name }} chart is fully installed.
+After installation is complete, you can use your redirect:
+
+{{ .Values.ingress.host }} -> {{ .Values.ingress.redirect }}
+
+To verify your redirect is working run:
+
+curl -I {{ .Values.ingress.host }}

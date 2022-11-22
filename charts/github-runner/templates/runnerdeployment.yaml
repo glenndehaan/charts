@@ -1,0 +1,10 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: {{ .Release.Name }}-runner
+  labels:
+    {{- include "github-runner.labels" . | nindent 4 }}
+spec:
+  template:
+    spec:
+      repository: {{ .Values.github.repository }}

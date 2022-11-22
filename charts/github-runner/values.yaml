@@ -1,0 +1,18 @@
+# Default values for github-runner.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- String to partially override names.fullname
+nameOverride: ""
+# -- String to fully override names.fullname
+fullnameOverride: ""
+
+github:
+  # -- GitHub repository to bind the runner to
+  repository: user/repo
+
+autoscaling:
+  # -- Minimum available runners
+  minReplicas: 1
+  # -- Maximum available runners
+  maxReplicas: 5
