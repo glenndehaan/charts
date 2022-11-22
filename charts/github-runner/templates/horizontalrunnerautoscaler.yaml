@@ -1,12 +1,12 @@
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: HorizontalRunnerAutoscaler
 metadata:
-  name: {{ .Release.Name }}-runner
+  name: {{ include "github-runner.fullname" . }}-runner
   labels:
     {{- include "github-runner.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
-    name: {{ .Release.Name }}-runner
+    name: {{ include "github-runner.fullname" . }}-runner
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
