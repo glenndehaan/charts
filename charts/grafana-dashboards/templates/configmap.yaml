@@ -1,5 +1,4 @@
 {{- if .Values.dashboards.redis -}}
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -10,10 +9,10 @@ metadata:
 data:
   redis.json: |-
 {{ .Files.Get "dashboards/redis.json" | indent 4 }}
+---
 {{- end }}
 
 {{- if .Values.dashboards.traefik -}}
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -24,10 +23,10 @@ metadata:
 data:
   traefik.json: |-
 {{ .Files.Get "dashboards/traefik.json" | indent 4 }}
+---
 {{- end }}
 
 {{- if .Values.dashboards.certManager -}}
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -38,10 +37,10 @@ metadata:
 data:
   cert-manager.json: |-
 {{ .Files.Get "dashboards/cert-manager.json" | indent 4 }}
+---
 {{- end }}
 
 {{- if .Values.dashboards.loki -}}
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -52,8 +51,8 @@ metadata:
 data:
   loki-logs-overview.json: |-
 {{ .Files.Get "dashboards/loki-logs-overview.json" | indent 4 }}
-
 ---
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -64,8 +63,8 @@ metadata:
 data:
   loki-loki-promtail-stats.json: |-
 {{ .Files.Get "dashboards/loki-loki-promtail-stats.json" | indent 4 }}
-
 ---
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -76,10 +75,10 @@ metadata:
 data:
   loki-global-metrics.json: |-
 {{ .Files.Get "dashboards/loki-global-metrics.json" | indent 4 }}
+---
 {{- end }}
 
 {{- if .Values.dashboards.crowdsec -}}
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -90,4 +89,5 @@ metadata:
 data:
   crowdsec-overview.json: |-
 {{ .Files.Get "dashboards/crowdsec-overview.json" | indent 4 }}
+---
 {{- end }}
