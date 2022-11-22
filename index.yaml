@@ -3,6 +3,29 @@ entries:
   github-runner:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-11-22T20:14:12.561778221Z"
+    description: A Helm chart to setup GitHub runners for repositories
+    digest: 36e5348427425c86b150f99960ca45e9508c68954811870e41e8fd5217a94422
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - github
+    - github-runners
+    - self-hosted-runners
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: github-runner
+    sources:
+    - https://github.com/glenndehaan/charts
+    - https://github.com/actions-runner-controller/actions-runner-controller
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/github-runner-1.0.1/github-runner-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-11-22T18:22:43.030103256Z"
     description: A Helm chart to setup GitHub runners for repositories
     digest: 19b864e3649687f69a07794dc834f45c3a6616cb3651908318b648ba5f3fd372
@@ -266,4 +289,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-22T18:22:43.155260339Z"
+generated: "2022-11-22T20:14:12.561814021Z"
