@@ -47,6 +47,28 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/github-runner-1.0.0/github-runner-1.0.0.tgz
     version: 1.0.0
+  grafana-dashboards:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-11-22T20:39:15.455488651Z"
+    description: A Helm chart that deploys my collection of Grafana dashboards
+    digest: e87b91e49cdbd0875c60e8ebc72e1a73e93da914b6b410858a01f6a9011f17ba
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - grafana
+    - dashboards
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: grafana-dashboards
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/grafana-dashboards-1.0.0/grafana-dashboards-1.0.0.tgz
+    version: 1.0.0
   ship:
   - apiVersion: v2
     appVersion: latest
@@ -289,4 +311,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-22T20:14:12.561814021Z"
+generated: "2022-11-22T20:39:15.455518751Z"
