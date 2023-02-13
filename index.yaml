@@ -93,6 +93,30 @@ entries:
   ship:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-02-13T18:19:45.482305503Z"
+    description: A kubernetes/docker swarm service manager/updater
+    digest: b47f5e8658db1df8e12a0344f8aa1aecd3e0c3cab4b0b9b644792b03e439f284
+    home: https://github.com/glenndehaan/ship
+    icon: https://raw.githubusercontent.com/glenndehaan/ship/master/src/public/images/favicon.png
+    keywords:
+    - kubernetes
+    - docker
+    - docker-image
+    - docker-swarm
+    - web-ui
+    - admin-panel
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+    name: ship
+    sources:
+    - https://github.com/glenndehaan/ship
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/ship-1.0.2/ship-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: latest
     created: "2022-11-01T18:05:36.626908941Z"
     description: A kubernetes/docker swarm service manager/updater
     digest: 0f4b08afff274875fc28f801f7db82365c7fe767655604963c0642ad132eee3e
@@ -290,6 +314,53 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/ship-0.0.1/ship-0.0.1.tgz
     version: 0.0.1
+  traefik-dashboard:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-02-13T18:19:45.611295448Z"
+    description: A Helm chart to expose the Traefik Dashboard
+    digest: 08be03fac1388213a8caa97c754ba398a9402c03832d08499646372d240a8f9e
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - traefik
+    - dashboard
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: traefik-dashboard
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/traefik-dashboard-1.0.0/traefik-dashboard-1.0.0.tgz
+    version: 1.0.0
+  traefik-helpers:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-02-13T18:19:45.8487665Z"
+    description: A Helm chart with useful Traefik middlewares, helpers and default
+      configuration
+    digest: d351154947f9b1d4c60644dd6a90071ba5ccee4d627c0a60c7b02d27cb08a5bf
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - traefik
+    - middlewares
+    - helpers
+    - config
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: traefik-helpers
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/traefik-helpers-1.0.0/traefik-helpers-1.0.0.tgz
+    version: 1.0.0
   traefik-redirect:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -332,4 +403,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2022-11-22T21:11:02.47680958Z"
+generated: "2023-02-13T18:19:45.8488133Z"
