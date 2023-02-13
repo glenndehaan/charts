@@ -1,0 +1,46 @@
+# Default values for traefik-helpers.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- String to partially override names.fullname
+nameOverride: ""
+# -- String to fully override names.fullname
+fullnameOverride: ""
+
+ingress:
+  # -- Redirects all http traffic to https without www
+  httpRedirects:
+    enabled: true
+  # -- Redirects all https traffic but strips the www if present
+  httpsRedirects:
+    enabled: true
+
+middlewares:
+  compress:
+    # -- Toggles the middleware
+    enabled: true
+    # -- Treafik compress middleware options, reference: https://doc.traefik.io/traefik/middlewares/http/compress/
+    options: {}
+  ipWhitelist:
+    # -- Toggles the middleware
+    enabled: true
+    # -- Treafik compress middleware options, reference: https://doc.traefik.io/traefik/middlewares/http/ipwhitelist/
+    options: {}
+  rateLimit:
+    # -- Toggles the middleware
+    enabled: true
+    # -- Treafik compress middleware options, reference: https://doc.traefik.io/traefik/middlewares/http/ratelimit/
+    options:
+      average: 100
+      burst: 50
+  secureHeaders:
+    # -- Toggles the middleware
+    enabled: true
+
+serviceMonitor:
+  # -- Toggles the service monitor
+  enabled: true
+
+tlsOption:
+  # -- Toggles the TLS option
+  enabled: true

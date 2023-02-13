@@ -1,0 +1,17 @@
+{{- if .Values.middlewares.compress.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ include "traefik-helpers.fullname" . }}-compress
+  labels:
+    {{- include "traefik-helpers.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.middlewares.compress.options }}
+  compress: {}
+  {{- else }}
+  {{- with .Values.middlewares.compress.options }}
+  compress:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- end }}
+{{- end }}

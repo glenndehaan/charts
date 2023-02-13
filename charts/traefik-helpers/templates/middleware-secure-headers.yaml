@@ -1,0 +1,19 @@
+{{- if .Values.middlewares.secureHeaders.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ include "traefik-helpers.fullname" . }}-secure-headers
+  labels:
+    {{- include "traefik-helpers.labels" . | nindent 4 }}
+spec:
+  headers:
+    sslRedirect: true
+    customFrameOptionsValue: SAMEORIGIN
+    stsIncludeSubdomains: true
+    stsPreload: true
+    stsSeconds: 63072000
+    contentTypeNosniff: true
+    addVaryHeader: true
+    browserXssFilter: true
+    referrerPolicy: same-origin
+{{- end }}

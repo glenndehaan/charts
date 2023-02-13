@@ -1,0 +1,13 @@
+{{- if or .Values.ingress.httpRedirects.enabled .Values.ingress.httpsRedirects.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ include "traefik-helpers.fullname" . }}-redirect-to-non-www-https
+  labels:
+    {{- include "traefik-helpers.labels" . | nindent 4 }}
+spec:
+  redirectRegex:
+    regex: ^https?://(?:www\.)?(.+)
+    replacement: https://${1}
+    permanent: true
+{{- end }}

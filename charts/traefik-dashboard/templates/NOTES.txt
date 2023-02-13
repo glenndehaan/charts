@@ -1,0 +1,4 @@
+Please wait a few seconds until the {{ .Chart.Name }} chart is fully installed.
+After installation is complete, you can view the Treafik dashboard here:
+
+{{ .Values.ingress.host }}

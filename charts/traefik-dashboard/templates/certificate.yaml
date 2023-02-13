@@ -1,0 +1,16 @@
+{{- if .Values.certManager.enabled }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "traefik-dashboard.fullname" . }}
+  labels:
+    {{- include "traefik-dashboard.labels" . | nindent 4 }}
+spec:
+  secretName: {{ include "traefik-dashboard.fullname" . }}-tls
+  {{- with .Values.certManager.issuerRef }}
+  issuerRef:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  dnsNames:
+    - "{{ .Values.ingress.host }}"
+{{- end }}

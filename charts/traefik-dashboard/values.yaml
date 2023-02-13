@@ -1,0 +1,36 @@
+# Default values for traefik-dashboard.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- String to partially override names.fullname
+nameOverride: ""
+# -- String to fully override names.fullname
+fullnameOverride: ""
+
+ingress:
+  entryPoints:
+    # -- Default entrypoint Traefik listens on
+    - websecure
+  # -- Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  # -- Default host for the ingress record
+  host: chart-example.local
+  # -- Traefik middlewares to include
+  middlewares: []
+    # - name: ip-whitelist
+  # -- Default TLS options
+  tls:
+    # -- Toggles the TLS
+    enabled: true
+    # -- Optional Traefik TLS options
+    options: {}
+
+certManager:
+  # -- Toggles if a cert-manager certificate should be generated
+  enabled: false
+  # -- Cert-manager issuer reference
+  issuerRef: {}
+    # name: acme-issuer
+    # kind: ClusterIssuer

@@ -1,0 +1,17 @@
+{{- if .Values.middlewares.ipWhitelist.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ include "traefik-helpers.fullname" . }}-ip-whitelist
+  labels:
+    {{- include "traefik-helpers.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.middlewares.ipWhitelist.options }}
+  ipWhiteList: {}
+  {{- else }}
+  {{- with .Values.middlewares.ipWhitelist.options }}
+  ipWhiteList:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- end }}
+{{- end }}

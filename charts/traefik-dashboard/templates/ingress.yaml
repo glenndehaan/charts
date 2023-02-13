@@ -1,0 +1,37 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "traefik-dashboard.fullname" . }}
+  labels:
+    {{- include "traefik-dashboard.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- if .Values.ingress.tls.enabled }}
+  tls:
+    secretName: {{ include "traefik-dashboard.fullname" . }}-tls
+    {{- with .Values.ingress.tls.options }}
+    options:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    domains:
+      - main: {{ .Values.ingress.host }}
+  {{- end }}
+  {{- with .Values.ingress.entryPoints }}
+  entryPoints:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  routes:
+    - match: 'Host(`{{ .Values.ingress.host }}`)'
+      kind: Rule
+      {{- if .Values.ingress.middlewares }}
+      middlewares:
+        {{- range .Values.ingress.middlewares }}
+        - name: {{ .name | quote }}
+        {{- end }}
+      {{- end }}
+      services:
+        - name: api@internal
+          kind: TraefikService

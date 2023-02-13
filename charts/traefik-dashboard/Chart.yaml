@@ -1,20 +1,17 @@
 apiVersion: v2
-name: ship
-description: A kubernetes/docker swarm service manager/updater
-home: https://github.com/glenndehaan/ship
-icon: https://raw.githubusercontent.com/glenndehaan/ship/master/src/public/images/favicon.png
+name: traefik-dashboard
+description: A Helm chart to expose the Traefik Dashboard
+home: https://github.com/glenndehaan/charts
 keywords:
   - kubernetes
-  - docker
-  - docker-image
-  - docker-swarm
-  - web-ui
-  - admin-panel
+  - traefik
+  - dashboard
 maintainers:
   - email: glenn@dehaan.cloud
     name: glenndehaan
+    url: https://glenndehaan.com
 sources:
-  - https://github.com/glenndehaan/ship
+  - https://github.com/glenndehaan/charts
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -29,10 +26,10 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.0.2
+version: 1.0.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "latest"
+appVersion: "1.0.0"

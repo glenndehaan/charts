@@ -1,0 +1,13 @@
+{{- if .Values.middlewares.rateLimit.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ include "traefik-helpers.fullname" . }}-rate-limit
+  labels:
+    {{- include "traefik-helpers.labels" . | nindent 4 }}
+spec:
+  {{- with .Values.middlewares.rateLimit.options }}
+  rateLimit:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+{{- end }}

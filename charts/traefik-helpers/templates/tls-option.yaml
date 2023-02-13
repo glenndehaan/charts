@@ -1,0 +1,11 @@
+{{- if .Values.tlsOption.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: TLSOption
+metadata:
+  name: {{ include "traefik-helpers.fullname" . }}-tls13
+  labels:
+    {{- include "traefik-helpers.labels" . | nindent 4 }}
+spec:
+  minVersion: VersionTLS13
+  sniStrict: true
+{{- end }}

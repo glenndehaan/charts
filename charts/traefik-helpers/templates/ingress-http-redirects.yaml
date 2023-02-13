@@ -1,0 +1,19 @@
+{{- if .Values.ingress.httpRedirects.enabled }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "traefik-helpers.fullname" . }}-http-redirects
+  labels:
+    {{- include "traefik-helpers.labels" . | nindent 4 }}
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: 'hostregexp(`{host:(www\.)?.+}`)'
+      kind: Rule
+      middlewares:
+        - name: {{ include "traefik-helpers.fullname" . }}-redirect-to-non-www-https
+      services:
+        - name: noop@internal
+          kind: TraefikService
+{{- end }}
