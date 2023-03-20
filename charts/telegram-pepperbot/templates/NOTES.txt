@@ -1,0 +1,1 @@
+Please wait a few seconds until the {{ .Chart.Name }} chart is fully installed.
