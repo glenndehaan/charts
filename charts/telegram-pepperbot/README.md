@@ -1,6 +1,6 @@
 # telegram-pepperbot
 
-![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the telegram-pepperbot application
 
@@ -33,9 +33,9 @@ A Helm chart for deploying the telegram-pepperbot application
 | podAnnotations | object | `{}` | Annotations for Telegram-Pepperbot pods |
 | podSecurityContext | object | `{}` | Pod Security Context for Telegram-Pepperbot pods |
 | replicaCount | int | `2` | Number of Telegram-Pepperbot replicas to deploy |
-| resources | object | `{}` | Resources for pods. Evaluated as a template. |
+| resources | object | `{"limits":{"memory":"25Mi"},"requests":{"memory":"25Mi"}}` | Resources for pods. Evaluated as a template. |
 | revisionHistoryLimit | int | `1` | Number of Telegram-Pepperbot revisions to keep |
-| securityContext | object | `{}` | Security Context for Telegram-Pepperbot |
+| securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true}` | Security Context for Telegram-Pepperbot |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
