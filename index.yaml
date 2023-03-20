@@ -3,6 +3,29 @@ entries:
   github-runner:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-03-20T11:11:25.934790995Z"
+    description: A Helm chart to setup GitHub runners for repositories
+    digest: 7147d27159585612e8ad69da3b4117cc3cca39cffa11eea882066be42cb82f39
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - github
+    - github-runners
+    - self-hosted-runners
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: github-runner
+    sources:
+    - https://github.com/glenndehaan/charts
+    - https://github.com/actions-runner-controller/actions-runner-controller
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/github-runner-1.0.2/github-runner-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-11-22T20:14:12.561778221Z"
     description: A Helm chart to setup GitHub runners for repositories
     digest: 36e5348427425c86b150f99960ca45e9508c68954811870e41e8fd5217a94422
@@ -48,6 +71,27 @@ entries:
     - https://github.com/glenndehaan/charts/releases/download/github-runner-1.0.0/github-runner-1.0.0.tgz
     version: 1.0.0
   grafana-dashboards:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-03-20T11:11:26.113937447Z"
+    description: A Helm chart that deploys my collection of Grafana dashboards
+    digest: 223aedfe47a71c398c104b16916183d1fba6e24a0e99feeee5fdfbf181be9e05
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - grafana
+    - dashboards
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: grafana-dashboards
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/grafana-dashboards-1.0.2/grafana-dashboards-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-11-22T21:11:02.476587979Z"
@@ -339,6 +383,30 @@ entries:
   traefik-helpers:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-03-20T11:11:26.304402052Z"
+    description: A Helm chart with useful Traefik middlewares, helpers and default
+      configuration
+    digest: 3eda4a8ca4372b26888562eba1313ba5d4af838df04c1c03450d498326699f92
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - traefik
+    - middlewares
+    - helpers
+    - config
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: traefik-helpers
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/traefik-helpers-1.0.1/traefik-helpers-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-02-13T18:19:45.8487665Z"
     description: A Helm chart with useful Traefik middlewares, helpers and default
       configuration
@@ -403,4 +471,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-02-13T18:19:45.8488133Z"
+generated: "2023-03-20T11:11:26.304441652Z"
