@@ -47,6 +47,8 @@ spec:
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
               value: "{{ .Values.pepperbot.telegramToken }}"
+            - name: RUST_LOG
+              value: "{{ .Values.pepperbot.logLevel }}"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -110,6 +112,8 @@ spec:
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
               value: "{{ .Values.pepperbot.telegramToken }}"
+            - name: RUST_LOG
+              value: "{{ .Values.pepperbot.logLevel }}"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -173,6 +177,8 @@ spec:
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
               value: "{{ .Values.pepperbot.telegramToken }}"
+            - name: RUST_LOG
+              value: "{{ .Values.pepperbot.logLevel }}"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

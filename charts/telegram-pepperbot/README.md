@@ -1,6 +1,6 @@
 # telegram-pepperbot
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the telegram-pepperbot application
 
@@ -28,6 +28,7 @@ A Helm chart for deploying the telegram-pepperbot application
 | imagePullSecrets | list | `[]` | Specify docker-registry secret names as an array |
 | nameOverride | string | `""` | String to partially override names.fullname |
 | nodeSelector | object | `{}` | Node labels for pod assignment. Evaluated as a template. |
+| pepperbot.logLevel | string | `"info"` | Telegram-Pepperbot Logger Level |
 | pepperbot.redisHost | string | `"redis-headless.example.svc.cluster.local"` | Telegram-Pepperbot Redis Host |
 | pepperbot.telegramToken | string | `""` | Telegram-Pepperbot Telegram Bot Token |
 | podAnnotations | object | `{}` | Annotations for Telegram-Pepperbot pods |

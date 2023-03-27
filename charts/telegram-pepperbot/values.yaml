@@ -12,6 +12,8 @@ pepperbot:
   redisHost: "redis-headless.example.svc.cluster.local"
   # -- Telegram-Pepperbot Telegram Bot Token
   telegramToken: ""
+  # -- Telegram-Pepperbot Logger Level
+  logLevel: "info"
 
 image:
   # -- Telegram-Pepperbot image repository
