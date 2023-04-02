@@ -12,6 +12,8 @@ pepperbot:
   redisHost: "redis-headless.example.svc.cluster.local"
   # -- Telegram-Pepperbot Telegram Bot Token
   telegramToken: ""
+  # -- Telegram-Pepperbot Telegram Admin Chat ID (Allows specific people to run admin commands)
+  telegramAdminChatId: ""
   # -- Telegram-Pepperbot Logger Level
   logLevel: "info"
 

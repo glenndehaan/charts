@@ -47,6 +47,8 @@ spec:
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
               value: "{{ .Values.pepperbot.telegramToken }}"
+            - name: ADMIN_CHAT_ID
+              value: "{{ .Values.pepperbot.telegramAdminChatId }}"
             - name: RUST_LOG
               value: "{{ .Values.pepperbot.logLevel }}"
           resources:

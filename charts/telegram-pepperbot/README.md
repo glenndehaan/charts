@@ -1,6 +1,6 @@
 # telegram-pepperbot
 
-![Version: 1.1.2](https://img.shields.io/badge/Version-1.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.1.3](https://img.shields.io/badge/Version-1.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the telegram-pepperbot application
 
@@ -30,6 +30,7 @@ A Helm chart for deploying the telegram-pepperbot application
 | nodeSelector | object | `{}` | Node labels for pod assignment. Evaluated as a template. |
 | pepperbot.logLevel | string | `"info"` | Telegram-Pepperbot Logger Level |
 | pepperbot.redisHost | string | `"redis-headless.example.svc.cluster.local"` | Telegram-Pepperbot Redis Host |
+| pepperbot.telegramAdminChatId | string | `""` | Telegram-Pepperbot Telegram Admin Chat ID (Allows specific people to run admin commands) |
 | pepperbot.telegramToken | string | `""` | Telegram-Pepperbot Telegram Bot Token |
 | podAnnotations | object | `{}` | Annotations for Telegram-Pepperbot pods |
 | podSecurityContext | object | `{}` | Pod Security Context for Telegram-Pepperbot pods |
