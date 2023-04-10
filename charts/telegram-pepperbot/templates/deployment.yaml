@@ -199,3 +199,82 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver-{{ include "telegram-pepperbot.fullname" . }}
+  labels:
+    {{- include "telegram-pepperbot.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  selector:
+    matchLabels:
+      {{- include "telegram-pepperbot.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/type: webserver
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "telegram-pepperbot.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/type: webserver
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "telegram-pepperbot.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: {{ .Chart.Name }}-redis-ready
+          image: busybox:1.35
+          command: [ 'sh', '-c', 'echo -e "Checking for the availability of Redis Server"; while ! nc -z {{ .Values.pepperbot.redisHost }} 6379; do sleep 1; printf "-"; done; echo -e "  >> Redis Server is ready";' ]
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          command: ["dumb-init", "webserver"]
+          env:
+            - name: REDIS_URL
+              value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
+            - name: TELOXIDE_TOKEN
+              value: "{{ .Values.pepperbot.telegramToken }}"
+            - name: ADMIN_CHAT_ID
+              value: "{{ .Values.pepperbot.telegramAdminChatId }}"
+            - name: RUST_LOG
+              value: "{{ .Values.pepperbot.logLevel }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

@@ -1,6 +1,6 @@
 # telegram-pepperbot
 
-![Version: 1.1.4](https://img.shields.io/badge/Version-1.1.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the telegram-pepperbot application
 
@@ -26,6 +26,11 @@ A Helm chart for deploying the telegram-pepperbot application
 | image.repository | string | `"marnixjanssen/telgram-pepperbot"` | Telegram-Pepperbot image repository |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | Specify docker-registry secret names as an array |
+| ingress.annotations | object | `{}` | Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations. |
+| ingress.className | string | `""` | Set the ingressClassName on the ingress record for k8s 1.18+ |
+| ingress.enabled | bool | `false` | Set to true to enable ingress record generation |
+| ingress.hosts[0] | object | `{"host":"telegram-pepperbot.local","paths":[{"path":"/","pathType":"ImplementationSpecific"}]}` | Default host |
+| ingress.tls | list | `[]` | TLS secret configuration |
 | nameOverride | string | `""` | String to partially override names.fullname |
 | nodeSelector | object | `{}` | Node labels for pod assignment. Evaluated as a template. |
 | pepperbot.logLevel | string | `"info"` | Telegram-Pepperbot Logger Level |
@@ -38,6 +43,8 @@ A Helm chart for deploying the telegram-pepperbot application
 | resources | object | `{"limits":{"memory":"25Mi"},"requests":{"memory":"25Mi"}}` | Resources for pods. Evaluated as a template. |
 | revisionHistoryLimit | int | `1` | Number of Telegram-Pepperbot revisions to keep |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true}` | Security Context for Telegram-Pepperbot |
+| service.port | int | `8080` | Service HTTP port |
+| service.type | string | `"ClusterIP"` | Service type |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
