@@ -43,6 +43,8 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["dumb-init", "message-queuing"]
           env:
+            - name: HELM_CHART_VERSION
+              value: "v{{ .Chart.Version }}"
             - name: REDIS_URL
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
@@ -110,6 +112,8 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["dumb-init", "bot-commands"]
           env:
+            - name: HELM_CHART_VERSION
+              value: "v{{ .Chart.Version }}"
             - name: REDIS_URL
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
@@ -177,6 +181,8 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["dumb-init", "bot-consumer"]
           env:
+            - name: HELM_CHART_VERSION
+              value: "v{{ .Chart.Version }}"
             - name: REDIS_URL
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
@@ -256,6 +262,8 @@ spec:
               port: http
           command: ["dumb-init", "webserver"]
           env:
+            - name: HELM_CHART_VERSION
+              value: "v{{ .Chart.Version }}"
             - name: REDIS_URL
               value: "redis://{{ .Values.pepperbot.redisHost }}:6379"
             - name: TELOXIDE_TOKEN
