@@ -2,15 +2,15 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ include "ship.serviceAccountName" . }}
+  name: {{ include "kube-hook.serviceAccountName" . }}
   labels:
-    {{- include "ship.labels" . | nindent 4 }}
+    {{- include "kube-hook.labels" . | nindent 4 }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ include "ship.serviceAccountName" . }}
+  name: {{ include "kube-hook.serviceAccountName" . }}
 subjects:
   - kind: ServiceAccount
-    name: {{ include "ship.serviceAccountName" . }}
+    name: {{ include "kube-hook.serviceAccountName" . }}
     namespace: {{ .Release.Namespace }}
 {{- end }}
