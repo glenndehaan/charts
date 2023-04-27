@@ -134,6 +134,29 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/grafana-dashboards-1.0.0/grafana-dashboards-1.0.0.tgz
     version: 1.0.0
+  kube-hook:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2023-04-27T08:24:40.309283304Z"
+    description: A Kubernetes Webhook server that allows you to remotely restart deployments
+    digest: 89b86e355783afc6fc110fc4de13ba319b0759eada90a3c6a3300475a5bc6b35
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - utility
+    - deployment
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: kube-hook
+    sources:
+    - https://github.com/glenndehaan/charts
+    - https://github.com/glenndehaan/kube-hook
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/kube-hook-1.0.0/kube-hook-1.0.0.tgz
+    version: 1.0.0
   ship:
   - apiVersion: v2
     appVersion: latest
@@ -714,4 +737,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-04-12T19:15:30.128543691Z"
+generated: "2023-04-27T08:24:40.309389506Z"
