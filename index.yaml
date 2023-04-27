@@ -137,6 +137,28 @@ entries:
   kube-hook:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-04-27T08:46:03.726340111Z"
+    description: A Kubernetes Webhook server that allows you to remotely restart deployments
+    digest: 7d39e590eb9f0af0c22f2da5b0fde65a4d017b0f7961d2f4aefb93d3ffc10519
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - utility
+    - deployment
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: kube-hook
+    sources:
+    - https://github.com/glenndehaan/charts
+    - https://github.com/glenndehaan/kube-hook
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/kube-hook-1.0.3/kube-hook-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-04-27T08:33:32.073041379Z"
     description: A Kubernetes Webhook server that allows you to remotely restart deployments
     digest: f7d1c95449f3d76bc7a8614612c8a2c3d435264dd6e173cf7b09303fcb13cc70
@@ -781,4 +803,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-04-27T08:33:32.073105179Z"
+generated: "2023-04-27T08:46:03.726415212Z"
