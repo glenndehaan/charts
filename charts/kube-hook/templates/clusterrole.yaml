@@ -1,0 +1,21 @@
+{{- if .Values.serviceAccount.create -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "ship.serviceAccountName" . }}
+  labels:
+    {{- include "ship.labels" . | nindent 4 }}
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["deployments"]
+    verbs: ["get", "list", "update", "patch"]
+  - apiGroups: [""]
+    resources: ["replicaset"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["node"]
+    verbs: ["get", "list"]
+{{- end }}
