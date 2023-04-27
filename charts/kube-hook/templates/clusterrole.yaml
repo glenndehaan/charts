@@ -13,9 +13,9 @@ rules:
     resources: ["deployments"]
     verbs: ["get", "list", "update", "patch"]
   - apiGroups: [""]
-    resources: ["replicaset"]
+    resources: ["replicasets"]
     verbs: ["get", "list"]
   - apiGroups: [""]
-    resources: ["node"]
+    resources: ["nodes"]
     verbs: ["get", "list"]
 {{- end }}
