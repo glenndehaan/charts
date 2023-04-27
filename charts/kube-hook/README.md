@@ -1,6 +1,6 @@
 # kube-hook
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Kubernetes Webhook server that allows you to remotely restart deployments
 
@@ -40,7 +40,7 @@ A Kubernetes Webhook server that allows you to remotely restart deployments
 | replicaCount | int | `2` | Number of kube-hook replicas to deploy |
 | resources | object | `{"limits":{"memory":"125Mi"},"requests":{"memory":"125Mi"}}` | Resources for pods. Evaluated as a template. |
 | revisionHistoryLimit | int | `1` | Number of kube-hook revisions to keep |
-| securityContext | object | `{}` | Security Context for kube-hook |
+| securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true,"runAsGroup":101,"runAsUser":101}` | Security Context for kube-hook |
 | service.port | int | `3000` | Service HTTP port |
 | service.type | string | `"ClusterIP"` | Service type |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |

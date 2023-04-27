@@ -45,13 +45,15 @@ podSecurityContext: {}
   # fsGroup: 2000
 
 # -- Security Context for kube-hook
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true
+  runAsGroup: 101
+  runAsUser: 101
 
 service:
   # -- Service type
