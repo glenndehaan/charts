@@ -1,3 +1,4 @@
+{{- if .Values.pepperbot.deployments.messageQueuing -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -67,6 +68,8 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end }}
+{{- if .Values.pepperbot.deployments.botCommands -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -136,6 +139,8 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end }}
+{{- if .Values.pepperbot.deployments.botConsumer -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -205,6 +210,8 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end }}
+{{- if .Values.pepperbot.deployments.webserver -}}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -286,3 +293,4 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end }}

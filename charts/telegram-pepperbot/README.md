@@ -1,6 +1,6 @@
 # telegram-pepperbot
 
-![Version: 1.2.1](https://img.shields.io/badge/Version-1.2.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the telegram-pepperbot application
 
@@ -33,6 +33,11 @@ A Helm chart for deploying the telegram-pepperbot application
 | ingress.tls | list | `[]` | TLS secret configuration |
 | nameOverride | string | `""` | String to partially override names.fullname |
 | nodeSelector | object | `{}` | Node labels for pod assignment. Evaluated as a template. |
+| pepperbot.deployments | object | `{"botCommands":true,"botConsumer":true,"messageQueuing":true,"webserver":true}` | Telegram-Pepperbot Deployment Toggles |
+| pepperbot.deployments.botCommands | bool | `true` | Telegram-Pepperbot Enables/Disabled the bot commands deployment |
+| pepperbot.deployments.botConsumer | bool | `true` | Telegram-Pepperbot Enables/Disabled the bot consumer deployment |
+| pepperbot.deployments.messageQueuing | bool | `true` | Telegram-Pepperbot Enables/Disabled the message queuing deployment |
+| pepperbot.deployments.webserver | bool | `true` | Telegram-Pepperbot Enables/Disabled the webserver deployment |
 | pepperbot.logLevel | string | `"info"` | Telegram-Pepperbot Logger Level |
 | pepperbot.redisHost | string | `"redis-headless.example.svc.cluster.local"` | Telegram-Pepperbot Redis Host |
 | pepperbot.telegramAdminChatId | string | `""` | Telegram-Pepperbot Telegram Admin Chat ID (Allows specific people to run admin commands) |

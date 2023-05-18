@@ -16,6 +16,16 @@ pepperbot:
   telegramAdminChatId: ""
   # -- Telegram-Pepperbot Logger Level
   logLevel: "info"
+  # -- Telegram-Pepperbot Deployment Toggles
+  deployments:
+    # -- Telegram-Pepperbot Enables/Disabled the message queuing deployment
+    messageQueuing: true
+    # -- Telegram-Pepperbot Enables/Disabled the bot commands deployment
+    botCommands: true
+    # -- Telegram-Pepperbot Enables/Disabled the bot consumer deployment
+    botConsumer: true
+    # -- Telegram-Pepperbot Enables/Disabled the webserver deployment
+    webserver: true
 
 image:
   # -- Telegram-Pepperbot image repository
