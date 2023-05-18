@@ -450,6 +450,28 @@ entries:
   telegram-pepperbot:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-05-18T16:42:32.773173929Z"
+    description: A Helm chart for deploying the telegram-pepperbot application
+    digest: 40fcba499f3991a49efdc652d03f05a23d6d770da257efe032b0adaa675db727
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - telegram
+    - pepper
+    - app
+    - redis
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: telegram-pepperbot
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/telegram-pepperbot-1.3.0/telegram-pepperbot-1.3.0.tgz
+    version: 1.3.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-04-12T19:15:30.128438191Z"
     description: A Helm chart for deploying the telegram-pepperbot application
     digest: 41e5c27f053fa8bf5ec242ff3a9429a6ba2b43ff50a406f97d8be2b4145e15d7
@@ -803,4 +825,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-04-27T08:46:03.726415212Z"
+generated: "2023-05-18T16:42:32.77336354Z"
