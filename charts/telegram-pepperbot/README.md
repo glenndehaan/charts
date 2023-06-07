@@ -1,6 +1,6 @@
 # telegram-pepperbot
 
-![Version: 1.3.2](https://img.shields.io/badge/Version-1.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.3.3](https://img.shields.io/badge/Version-1.3.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the telegram-pepperbot application
 
@@ -44,7 +44,7 @@ A Helm chart for deploying the telegram-pepperbot application
 | pepperbot.telegramToken | string | `""` | Telegram-Pepperbot Telegram Bot Token |
 | podAnnotations | object | `{}` | Annotations for Telegram-Pepperbot pods |
 | podSecurityContext | object | `{}` | Pod Security Context for Telegram-Pepperbot pods |
-| replicaCount | int | `2` | Number of Telegram-Pepperbot replicas to deploy |
+| replicaCount | int | `4` | Number of Telegram-Pepperbot replicas to deploy |
 | resources | object | `{"limits":{"memory":"25Mi"},"requests":{"memory":"25Mi"}}` | Resources for pods. Evaluated as a template. |
 | revisionHistoryLimit | int | `1` | Number of Telegram-Pepperbot revisions to keep |
 | securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true}` | Security Context for Telegram-Pepperbot |

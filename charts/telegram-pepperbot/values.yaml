@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 # -- Number of Telegram-Pepperbot replicas to deploy
-replicaCount: 2
+replicaCount: 4
 # -- Number of Telegram-Pepperbot revisions to keep
 revisionHistoryLimit: 1
 
