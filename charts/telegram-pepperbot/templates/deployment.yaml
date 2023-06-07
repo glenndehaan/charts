@@ -260,11 +260,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /_health
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /_health
               port: http
           command: ["dumb-init", "webserver"]
           env:
