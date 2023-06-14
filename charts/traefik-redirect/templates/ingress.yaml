@@ -9,6 +9,16 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  {{- if .Values.ingress.tls.enabled }}
+  tls:
+    secretName: {{ if eq .Values.ingress.tls.secretNameOverride "" }}{{ include "traefik-redirect.fullname" . }}-tls{{ else }}{{ .Values.ingress.tls.secretNameOverride }}{{ end }}
+    {{- with .Values.ingress.tls.options }}
+    options:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    domains:
+      - main: {{ .Values.ingress.host }}
+  {{- end }}
   {{- with .Values.ingress.entryPoints }}
   entryPoints:
     {{- toYaml . | nindent 4 }}

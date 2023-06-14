@@ -1,6 +1,6 @@
 # traefik-redirect
 
-![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A Helm chart to create a simple http(s) redirect within Traefik
 
@@ -20,11 +20,17 @@ A Helm chart to create a simple http(s) redirect within Traefik
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| certManager.enabled | bool | `false` | Toggles if a cert-manager certificate should be generated |
+| certManager.issuerRef | object | `{}` | Cert-manager issuer reference |
 | fullnameOverride | string | `""` | String to fully override names.fullname |
 | ingress.annotations | object | `{}` | Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations. |
 | ingress.entryPoints[0] | string | `"websecure"` | Default entrypoint Traefik listens for the redirect |
 | ingress.host | string | `"chart-example.local"` | Default host for the ingress record |
 | ingress.redirect | string | `"chart-example-new.local"` | Default redirect host for the redirect. Can contain path example: chart-example-new.local/hello-world |
+| ingress.tls | object | `{"enabled":true,"options":{},"secretNameOverride":""}` | Default TLS options |
+| ingress.tls.enabled | bool | `true` | Toggles the TLS |
+| ingress.tls.options | object | `{}` | Optional Traefik TLS options |
+| ingress.tls.secretNameOverride | string | `""` | Optional TLS Secret Name |
 | nameOverride | string | `""` | String to partially override names.fullname |
 
 ----------------------------------------------

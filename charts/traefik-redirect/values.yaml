@@ -19,3 +19,19 @@ ingress:
   host: chart-example.local
   # -- Default redirect host for the redirect. Can contain path example: chart-example-new.local/hello-world
   redirect: chart-example-new.local
+  # -- Default TLS options
+  tls:
+    # -- Toggles the TLS
+    enabled: true
+    # -- Optional Traefik TLS options
+    options: {}
+    # -- Optional TLS Secret Name
+    secretNameOverride: ""
+
+certManager:
+  # -- Toggles if a cert-manager certificate should be generated
+  enabled: false
+  # -- Cert-manager issuer reference
+  issuerRef: {}
+    # name: acme-issuer
+    # kind: ClusterIssuer
