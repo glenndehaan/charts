@@ -874,6 +874,27 @@ entries:
   traefik-redirect:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-06-14T13:10:46.749472696Z"
+    description: A Helm chart to create a simple http(s) redirect within Traefik
+    digest: d0d6dac3a8a06e75f7dd1004c2478111af76cb4e4d9317e8422ebbe9513800c6
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - traefik
+    - redirect
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: traefik-redirect
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.1.0/traefik-redirect-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-11-22T18:22:43.155208639Z"
     description: A Helm chart to create a simple http(s) redirect within Traefik
     digest: abbf0f2cc975ef0b1ead938511e93c60d346fa6dcf33484a3fe4693f394ff620
@@ -913,4 +934,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-06-07T21:18:16.704661081Z"
+generated: "2023-06-14T13:10:46.749584297Z"
