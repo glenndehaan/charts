@@ -1,10 +1,10 @@
 # contentbridge
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the ContentBridge CMS
 
-**Homepage:** <https://github.com/glenndehaan/charts>
+**Homepage:** <https://github.com/glenndehaan/contentbridge>
 
 ## Maintainers
 
@@ -14,6 +14,7 @@ A Helm chart for deploying the ContentBridge CMS
 
 ## Source Code
 
+* <https://github.com/glenndehaan/contentbridge>
 * <https://github.com/glenndehaan/charts>
 
 ## Values
@@ -22,7 +23,7 @@ A Helm chart for deploying the ContentBridge CMS
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity for pod assignment |
 | fullnameOverride | string | `""` | String to fully override names.fullname |
-| image.pullPolicy | string | `"IfNotPresent"` | ContentBridge image pull policy |
+| image.pullPolicy | string | `"Always"` | ContentBridge image pull policy |
 | image.repository | string | `"glenndehaan/contentbridge"` | ContentBridge image repository |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | Specify docker-registry secret names as an array |
