@@ -3,6 +3,26 @@ entries:
   contentbridge:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-06-25T12:54:01.770305338Z"
+    description: A Helm chart for deploying the ContentBridge CMS
+    digest: dc3018556344f39f7a4790471e09e648e27d951a1c52171627a75c6a7fd10530
+    home: https://github.com/glenndehaan/contentbridge
+    keywords:
+    - cms
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: contentbridge
+    sources:
+    - https://github.com/glenndehaan/contentbridge
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/contentbridge-1.1.0/contentbridge-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-06-25T11:48:46.02826597Z"
     description: A Helm chart for deploying the ContentBridge CMS
     digest: 283050ff20b0401aefb30ae0d6314060bca5c286eb1032cbf6f3520b3abeae3f
@@ -975,4 +995,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-06-25T11:48:46.028476674Z"
+generated: "2023-06-25T12:54:01.770555145Z"
