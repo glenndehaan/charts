@@ -1,6 +1,6 @@
 # contentbridge
 
-![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the ContentBridge CMS
 
@@ -22,6 +22,16 @@ A Helm chart for deploying the ContentBridge CMS
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity for pod assignment |
+| contentbridge.database.database | string | `""` | ContentBridge Database Name (Not required for sqlite) |
+| contentbridge.database.dialect | string | `"sqlite"` | ContentBridge Database Type/Dialect |
+| contentbridge.database.host | string | `""` | ContentBridge Database Hostname (Not required for sqlite) |
+| contentbridge.database.password | string | `""` | ContentBridge Database Password (Not required for sqlite) |
+| contentbridge.database.port | string | `""` | ContentBridge Database Port (Not required for sqlite) |
+| contentbridge.database.username | string | `""` | ContentBridge Database Username (Not required for sqlite) |
+| contentbridge.jwt.algorithm | string | `"HS512"` | ContentBridge JWT algorithm |
+| contentbridge.jwt.expiresIn | string | `"24h"` | ContentBridge JWT expiry time |
+| contentbridge.jwt.secret | string | `"CHANGE ME!!!"` | ContentBridge JWT secret |
+| contentbridge.logger.level | string | `"INFO"` | ContentBridge Logger Level |
 | fullnameOverride | string | `""` | String to fully override names.fullname |
 | image.pullPolicy | string | `"Always"` | ContentBridge image pull policy |
 | image.repository | string | `"glenndehaan/contentbridge"` | ContentBridge image repository |

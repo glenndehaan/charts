@@ -7,6 +7,31 @@ replicaCount: 1
 # -- Number of ContentBridge revisions to keep
 revisionHistoryLimit: 1
 
+contentbridge:
+  logger:
+    # -- ContentBridge Logger Level
+    level: "INFO"
+  database:
+    # -- ContentBridge Database Type/Dialect
+    dialect: "sqlite"
+    # -- ContentBridge Database Hostname (Not required for sqlite)
+    host: ""
+    # -- ContentBridge Database Port (Not required for sqlite)
+    port: ""
+    # -- ContentBridge Database Username (Not required for sqlite)
+    username: ""
+    # -- ContentBridge Database Password (Not required for sqlite)
+    password: ""
+    # -- ContentBridge Database Name (Not required for sqlite)
+    database: ""
+  jwt:
+    # -- ContentBridge JWT algorithm
+    algorithm: "HS512"
+    # -- ContentBridge JWT secret
+    secret: "CHANGE ME!!!"
+    # -- ContentBridge JWT expiry time
+    expiresIn: "24h"
+
 image:
   # -- ContentBridge image repository
   repository: glenndehaan/contentbridge
