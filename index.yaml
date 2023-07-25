@@ -508,6 +508,27 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/ship-0.0.1/ship-0.0.1.tgz
     version: 0.0.1
+  sunflare-tools:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2023-07-25T18:33:44.016688643Z"
+    description: A Helm chart for deploying the sunflare tools
+    digest: dadf17e8edcec02828930c4efff548b58218e491ca3961b58a9c0b6d7963a824
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - tools
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: sunflare-tools
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/sunflare-tools-1.0.0/sunflare-tools-1.0.0.tgz
+    version: 1.0.0
   telegram-pepperbot:
   - apiVersion: v2
     appVersion: latest
@@ -995,4 +1016,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-06-25T12:54:01.770555145Z"
+generated: "2023-07-25T18:33:44.016904444Z"
