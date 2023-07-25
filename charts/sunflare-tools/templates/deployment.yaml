@@ -1,0 +1,75 @@
+{{- $fullName := include "sunflare-tools.fullname" . -}}
+{{- $labels := include "sunflare-tools.labels" . -}}
+{{- $selectorLabels := include "sunflare-tools.selectorLabels" . -}}
+{{- $serviceAccountName := include "sunflare-tools.serviceAccountName" . -}}
+{{- range $t := .Values.sunflare.tools }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $t }}-{{ $fullName }}
+  labels:
+    {{- $labels | nindent 4 }}
+spec:
+  replicas: {{ $.Values.replicaCount }}
+  revisionHistoryLimit: {{ $.Values.revisionHistoryLimit }}
+  selector:
+    matchLabels:
+      {{- $selectorLabels | nindent 6 }}
+      app.kubernetes.io/type: {{ $t }}
+  template:
+    metadata:
+      {{- with $.Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- $selectorLabels | nindent 8 }}
+        app.kubernetes.io/type: {{ $t }}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ $serviceAccountName }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ $.Chart.Name }}
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag | default $.Chart.AppVersion }}"
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          command: ["dumb-init", "{{ $t }}"]
+          env:
+            - name: HELM_CHART_VERSION
+              value: "v{{ $.Chart.Version }}"
+            - name: RUST_LOG
+              value: "{{ $.Values.sunflare.logLevel }}"
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /_health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /_health
+              port: http
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+---
+{{- end }}
