@@ -511,6 +511,26 @@ entries:
   sunflare-tools:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-07-31T17:39:40.411319879Z"
+    description: A Helm chart for deploying the sunflare tools
+    digest: 0d09991c5ced8acae246089e3c25288d20986581c8f2498ac9e0fd0aa327c6a7
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - kubernetes
+    - tools
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: sunflare-tools
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/sunflare-tools-1.1.0/sunflare-tools-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-07-25T18:33:44.016688643Z"
     description: A Helm chart for deploying the sunflare tools
     digest: dadf17e8edcec02828930c4efff548b58218e491ca3961b58a9c0b6d7963a824
@@ -1016,4 +1036,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2023-07-25T18:33:44.016904444Z"
+generated: "2023-07-31T17:39:40.41143578Z"
