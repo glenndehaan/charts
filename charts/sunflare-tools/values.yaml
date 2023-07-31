@@ -14,6 +14,8 @@ sunflare:
     - whoami
     - password
     - uuid
+    - dns
+    - host
   # -- sunflare-tools Logger Level
   logLevel: "info"
 

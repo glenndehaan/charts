@@ -1,6 +1,6 @@
 # sunflare-tools
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the sunflare tools
 
@@ -45,7 +45,7 @@ A Helm chart for deploying the sunflare tools
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | sunflare.logLevel | string | `"info"` | sunflare-tools Logger Level |
-| sunflare.tools | list | `["ip","whoami","password","uuid"]` | Sunflare tools that will be installed |
+| sunflare.tools | list | `["ip","whoami","password","uuid","dns","host"]` | Sunflare tools that will be installed |
 | tolerations | list | `[]` | Tolerations for pod assignment. Evaluated as a template. |
 
 ----------------------------------------------
