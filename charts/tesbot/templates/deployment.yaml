@@ -1,0 +1,140 @@
+{{- if .Values.tesbot.deployments.processor -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: processor-{{ include "tesbot.fullname" . }}
+  labels:
+    {{- include "tesbot.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  selector:
+    matchLabels:
+      {{- include "tesbot.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/type: processor
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "tesbot.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/type: processor
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "tesbot.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: {{ .Chart.Name }}-redis-ready
+          image: busybox:1.35
+          command: [ 'sh', '-c', 'echo -e "Checking for the availability of Redis Server"; while ! nc -z {{ .Values.tesbot.redisHost }} 6379; do sleep 1; printf "-"; done; echo -e "  >> Redis Server is ready";' ]
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["dumb-init", "processor"]
+          env:
+            - name: HELM_CHART_VERSION
+              value: "v{{ .Chart.Version }}"
+            - name: REDIS_URL
+              value: "redis://{{ .Values.tesbot.redisHost }}:6379"
+            - name: TELOXIDE_TOKEN
+              value: "{{ .Values.tesbot.telegramToken }}"
+            - name: RUST_LOG
+              value: "{{ .Values.tesbot.logLevel }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+---
+{{- end }}
+{{- if .Values.tesbot.deployments.bot -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bot-{{ include "tesbot.fullname" . }}
+  labels:
+    {{- include "tesbot.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  selector:
+    matchLabels:
+      {{- include "tesbot.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/type: bot
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "tesbot.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/type: bot
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "tesbot.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: {{ .Chart.Name }}-redis-ready
+          image: busybox:1.35
+          command: [ 'sh', '-c', 'echo -e "Checking for the availability of Redis Server"; while ! nc -z {{ .Values.tesbot.redisHost }} 6379; do sleep 1; printf "-"; done; echo -e "  >> Redis Server is ready";' ]
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ["dumb-init", "bot"]
+          env:
+            - name: HELM_CHART_VERSION
+              value: "v{{ .Chart.Version }}"
+            - name: REDIS_URL
+              value: "redis://{{ .Values.tesbot.redisHost }}:6379"
+            - name: TELOXIDE_TOKEN
+              value: "{{ .Values.tesbot.telegramToken }}"
+            - name: RUST_LOG
+              value: "{{ .Values.tesbot.logLevel }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+---
+{{- end }}
