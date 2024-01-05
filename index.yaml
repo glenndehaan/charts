@@ -924,6 +924,29 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/telegram-pepperbot-1.0.0/telegram-pepperbot-1.0.0.tgz
     version: 1.0.0
+  tesbot:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-01-05T15:37:38.841029894Z"
+    description: A Helm chart for deploying the tesbot application
+    digest: 2b1921ad398b1694c10a7db572987ed0711e609abe3bda20f934fd45524a5843
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - telegram
+    - tesla
+    - app
+    - redis
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: tesbot
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/tesbot-1.0.0/tesbot-1.0.0.tgz
+    version: 1.0.0
   traefik-dashboard:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1124,4 +1147,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2024-01-04T09:51:30.086357141Z"
+generated: "2024-01-05T15:37:38.841207527Z"
