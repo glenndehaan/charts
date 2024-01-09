@@ -1,0 +1,103 @@
+# Default values for ssl-checker-bot.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# -- Number of ssl-checker-bot replicas to deploy
+replicaCount: 4
+# -- Number of ssl-checker-bot revisions to keep
+revisionHistoryLimit: 1
+
+sslCheckerBot:
+  # -- ssl-checker-bot Redis Host
+  redisHost: "redis-headless.example.svc.cluster.local"
+  # -- ssl-checker-bot Telegram Bot Token
+  telegramToken: ""
+  # -- ssl-checker-bot Logger Level
+  logLevel: "info"
+
+image:
+  # -- ssl-checker-bot image repository
+  repository: marnixjanssen/ssl-checker-bot
+  # -- ssl-checker-bot image pull policy
+  pullPolicy: Always
+  # -- Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+# -- Specify docker-registry secret names as an array
+imagePullSecrets: []
+# -- String to partially override names.fullname
+nameOverride: ""
+# -- String to fully override names.fullname
+fullnameOverride: ""
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+  # -- Annotations to add to the service account
+  annotations: {}
+  # -- The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+# -- Annotations for ssl-checker-bot pods
+podAnnotations: {}
+
+# -- Pod Security Context for ssl-checker-bot pods
+podSecurityContext: {}
+  # fsGroup: 2000
+
+# -- Security Context for ssl-checker-bot
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true
+
+service:
+  # -- Service type
+  type: ClusterIP
+  # -- Service HTTP port
+  port: 8080
+
+ingress:
+  # -- Set to true to enable ingress record generation
+  enabled: false
+  # -- Set the ingressClassName on the ingress record for k8s 1.18+
+  className: ""
+  # -- Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    # -- Default host
+    - host: ssl-checker-bot.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  # -- TLS secret configuration
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+# -- Resources for pods. Evaluated as a template.
+resources:
+  limits:
+    memory: 25Mi
+  requests:
+    memory: 25Mi
+
+# -- Node labels for pod assignment. Evaluated as a template.
+nodeSelector: {}
+
+# -- Tolerations for pod assignment. Evaluated as a template.
+tolerations: []
+
+# -- Affinity for pod assignment
+affinity: {}
+
+cronjob:
+  # -- Schedule for the CronJob. In Cron syntax
+  schedule: "0 12 * * *"

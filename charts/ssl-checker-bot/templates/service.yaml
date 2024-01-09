@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "ssl-checker-bot.fullname" . }}
+  labels:
+    {{- include "ssl-checker-bot.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "ssl-checker-bot.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/type: webserver
