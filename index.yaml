@@ -508,6 +508,30 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/ship-0.0.1/ship-0.0.1.tgz
     version: 0.0.1
+  ssl-checker-bot:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-01-09T19:23:10.29967336Z"
+    description: A Helm chart for deploying the ssl-checker-bot application
+    digest: 60a52d43d822b6fe073a39a8310c7fc1721e2a1d89cc6bda696a9f7df81c3618
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - telegram
+    - ssl
+    - cron
+    - app
+    - redis
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: ssl-checker-bot
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/ssl-checker-bot-1.0.0/ssl-checker-bot-1.0.0.tgz
+    version: 1.0.0
   sunflare-tools:
   - apiVersion: v2
     appVersion: latest
@@ -1147,4 +1171,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2024-01-05T15:37:38.841207527Z"
+generated: "2024-01-09T19:23:10.299820364Z"
