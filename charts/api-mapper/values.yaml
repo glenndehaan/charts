@@ -39,13 +39,13 @@ podSecurityContext: {}
   # fsGroup: 2000
 
 # -- Security Context for API Mapper
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  privileged: false
+  readOnlyRootFilesystem: true
 
 service:
   # -- Service type

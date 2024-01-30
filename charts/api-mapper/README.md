@@ -1,6 +1,6 @@
 # api-mapper
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the API Mapper
 
@@ -38,7 +38,7 @@ A Helm chart for deploying the API Mapper
 | replicaCount | int | `1` | Number of API Mapper replicas to deploy |
 | resources | object | `{"limits":{"memory":"150Mi"},"requests":{"memory":"150Mi"}}` | Resources for pods. Evaluated as a template. |
 | revisionHistoryLimit | int | `1` | Number of API Mapper revisions to keep |
-| securityContext | object | `{}` | Security Context for API Mapper |
+| securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true}` | Security Context for API Mapper |
 | service.port | int | `3000` | Service HTTP port |
 | service.type | string | `"ClusterIP"` | Service type |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
