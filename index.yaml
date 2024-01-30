@@ -3,6 +3,25 @@ entries:
   api-mapper:
   - apiVersion: v2
     appVersion: latest
+    created: "2024-01-30T15:38:19.599137207Z"
+    description: A Helm chart for deploying the API Mapper
+    digest: 12004a806b95b4d939f19658af6d6dddf44ed0393d68e057c273462c14fb9d57
+    home: https://github.com/glenndehaan/charts
+    keywords:
+    - api
+    maintainers:
+    - email: glenn@dehaan.cloud
+      name: glenndehaan
+      url: https://glenndehaan.com
+    name: api-mapper
+    sources:
+    - https://github.com/glenndehaan/charts
+    type: application
+    urls:
+    - https://github.com/glenndehaan/charts/releases/download/api-mapper-1.0.1/api-mapper-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2024-01-30T15:31:26.398189426Z"
     description: A Helm chart for deploying the API Mapper
     digest: 1b63dccec4dae4c3dd2b6a61d91dc01c08a8927ceb771b585ce0868c1ae770df
@@ -1191,4 +1210,4 @@ entries:
     urls:
     - https://github.com/glenndehaan/charts/releases/download/traefik-redirect-1.0.0/traefik-redirect-1.0.0.tgz
     version: 1.0.0
-generated: "2024-01-30T15:31:26.398347983Z"
+generated: "2024-01-30T15:38:19.599270132Z"
