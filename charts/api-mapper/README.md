@@ -1,6 +1,6 @@
 # api-mapper
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
+![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: latest](https://img.shields.io/badge/AppVersion-latest-informational?style=flat-square)
 
 A Helm chart for deploying the API Mapper
 
@@ -22,7 +22,7 @@ A Helm chart for deploying the API Mapper
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Affinity for pod assignment |
 | fullnameOverride | string | `""` | String to fully override names.fullname |
-| image.pullPolicy | string | `"IfNotPresent"` | API Mapper image pull policy |
+| image.pullPolicy | string | `"Always"` | API Mapper image pull policy |
 | image.repository | string | `"glenndehaan/api-mapper"` | API Mapper image repository |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | Specify docker-registry secret names as an array |

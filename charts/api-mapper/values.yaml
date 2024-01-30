@@ -11,7 +11,7 @@ image:
   # -- API Mapper image repository
   repository: glenndehaan/api-mapper
   # -- API Mapper image pull policy
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # -- Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
